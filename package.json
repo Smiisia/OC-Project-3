@@ -1,0 +1,12 @@
+{
+  "name": "oc-project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/styles.scss:./prefix/styles.css",
+    "prefix": "postcss -w ./prefix/styles.css --use autoprefixer -d ./css/"
+  },
+  "author": "Isaiah",
+  "license": "ISC"
+}

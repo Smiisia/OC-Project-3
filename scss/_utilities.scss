@@ -1,0 +1,13 @@
+@mixin shadow_effect{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+@mixin text_font {
+    font-family: 'Roboto';
+}
+
+$primary_color: #9356DC;
+$secondary_color: #FF79DA;
+$tertiary_color: #99E2D0;
+$location_color: rgb(234, 234, 234);
+$background_color: rgb(246, 246, 246);
