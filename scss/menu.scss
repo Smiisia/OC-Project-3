@@ -1,0 +1,126 @@
+@import "utilities";
+@import "config";
+
+
+header {
+    text-align: center;
+    .logo {
+        padding-top: 1em;
+        transform: scale(.8);
+    }
+    .header_img {
+        display: flex;
+        width: 100%;
+    }
+    .arrow {
+        transform: translate(-50px, -15px);
+    }
+}
+
+main {
+    background-color: $location_color;
+    padding: 30px 10px 10px 10px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    transform: translateY(-50px);
+
+    h1 {
+        font-family: 'Shrikhand';
+        font-size: 1.5em;
+        display: inline;
+        padding-left: 5px;
+    }
+
+    h2 {
+        font-size: 1em;
+        font-weight: 300;
+        padding-bottom: 3px;
+    }
+    
+    hr {
+        width: 12%;
+        margin-bottom: 12px;
+        color: rgb(113, 219, 196);
+    }
+
+    .heart {
+        font-size: 1.3em;
+        float: right;
+        transform: translate(-30px, 10px);
+    }
+    .heart_filled {
+        font-size: 1.3em;
+        opacity: 0%;
+        float: right;
+        transform: translate(-9px,10px);
+        background:-moz-linear-gradient(top, #e72c83 0%, #a742c6 100%); 
+        background: linear-gradient(to top, $primary_color 0%,$secondary_color 100%);
+        background-clip: text;
+         -webkit-background-clip: text;
+         -moz-background-clip: text;
+        background: text;
+        -webkit-text-fill-color:transparent;
+            &:hover {
+                opacity: 100%;
+            }
+    }
+
+    .menu-dishes {
+        border-radius: 15px;
+        margin-bottom: 1.5em;
+        @include shadow_effect;
+        padding: 10px;
+        background-color: $background_color;
+    }
+    .menu-item-text {
+        padding: 1em;
+            h3 {
+                padding-bottom: 5px;
+            }
+        }
+
+    .menu-items {
+        transform: translateY(20px);
+    }
+
+    button {
+        color: white;
+        background-image: linear-gradient($secondary_color, $primary_color);
+        padding: 1em;
+        border-radius: 25px;
+        border: none;
+        margin: 3em 0 4em 0;
+        @include shadow_effect;
+        width: 45%;
+        transform: translateX(60%);
+    }
+}
+
+footer {
+    background-color:lighten($color: black, $amount: 30%);
+    color: white;
+    padding-left: 2em;
+    margin-top: -3em;
+
+    .logo{
+        filter: invert(1);
+        padding: 1.5em 0 0.8em 0;
+        height: 3.5em;
+    }
+
+    .utenstils {
+        margin-right: 1em;
+    }
+
+    .hands {
+        margin-right: 0.5em;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        line-height: 1.8;
+    }
+}
