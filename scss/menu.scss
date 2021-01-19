@@ -40,7 +40,7 @@ main {
     hr {
         width: 12%;
         margin-bottom: 12px;
-        color: rgb(113, 219, 196);
+        color: $tertiary_color
     }
 
     .heart {
@@ -48,6 +48,7 @@ main {
         float: right;
         transform: translate(-30px, 10px);
     }
+
     .heart_filled {
         font-size: 1.3em;
         opacity: 0%;
@@ -66,18 +67,90 @@ main {
     }
 
     .menu-dishes {
-        border-radius: 15px;
-        margin-bottom: 1.5em;
+        display: flex;
+        border-radius: 1em;
+        text-align: left; 
+        margin-bottom: 30px;
         @include shadow_effect;
-        padding: 10px;
+        padding-left: 1em;
         background-color: $background_color;
-    }
-    .menu-item-text {
-        padding: 1em;
-            h3 {
-                padding-bottom: 5px;
+        overflow: hidden;
+        width: 100%;
+        height: 70px;
+        animation: slideup 4s;
+
+        @keyframes slideup {
+            from {
+                margin-top: 10%;
+                opacity: 0;
+            }
+            to {
+                margin-top: 0;
             }
         }
+        &:hover{
+            cursor: pointer;
+
+            .description {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden; 
+                .menu-item-text{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .slider {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: slideleft 0.8s normal linear forwards;
+
+            @keyframes slideleft {
+                from {
+                    margin-right: -35%;
+                }
+
+                to {
+                    margin-right: 0%;
+                }
+            }
+        }
+
+        .checkmark {
+            animation: rotate 0.7s normal linear forwards;
+        }
+            @keyframes rotate {
+                // 50% {
+                //     transform: rotate(0deg);
+                // }
+                0% {
+                    transform: rotate(360deg);
+                }
+            }
+
+    }
+
+        h3 {
+            font-size: 1em;
+            font-weight: 400;
+            padding-bottom: 5px;
+        }
+    }
+
+    .menu-item-text {
+        font-weight: 200;
+        font-size: .9em;
+        width: 100%;
+        }
+
+    .price {
+        width: 30%;
+        padding: 11% 0 0 0;
+    }
+    
 
     .menu-items {
         transform: translateY(20px);
@@ -94,10 +167,42 @@ main {
         width: 45%;
         transform: translateX(60%);
     }
+
+    .slider {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // changes ^
+        background-color: $tertiary-color;
+        animation: slideright 0.8s normal linear forwards;
+
+        @keyframes slideright {
+            from {
+              margin-right: 0;
+            }
+            to {
+              margin-right: -35%;
+            }
+          }
+    }
+
+    .checkmark{
+        color: white;
+        font-size: 220%;
+    }
+
+    .description{
+        width: 100%;
+        height: 50px;
+        padding: 10px 0 15px 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
 footer {
-    background-color:lighten($color: black, $amount: 30%);
+    background-color:lighten($color: black, $amount: 20%);
     color: white;
     padding-left: 2em;
     margin-top: -3em;

@@ -53,7 +53,7 @@ main h2 {
 main hr {
   width: 12%;
   margin-bottom: 12px;
-  color: #71dbc4;
+  color: #99E2D0;
 }
 
 main .heart {
@@ -83,20 +83,125 @@ main .heart_filled:hover {
 }
 
 main .menu-dishes {
-  border-radius: 15px;
-  margin-bottom: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1em;
+  text-align: left;
+  margin-bottom: 30px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  padding-left: 1em;
   background-color: #f6f6f6;
+  overflow: hidden;
+  width: 100%;
+  height: 70px;
+  -webkit-animation: slideup 4s;
+          animation: slideup 4s;
+}
+
+@-webkit-keyframes slideup {
+  from {
+    margin-top: 10%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@keyframes slideup {
+  from {
+    margin-top: 10%;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+main .menu-dishes:hover {
+  cursor: pointer;
+}
+
+main .menu-dishes:hover .description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+main .menu-dishes:hover .description .menu-item-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+main .menu-dishes:hover .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: slideleft 0.8s normal linear forwards;
+          animation: slideleft 0.8s normal linear forwards;
+}
+
+@-webkit-keyframes slideleft {
+  from {
+    margin-right: -35%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+@keyframes slideleft {
+  from {
+    margin-right: -35%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+main .menu-dishes:hover .checkmark {
+  -webkit-animation: rotate 0.7s normal linear forwards;
+          animation: rotate 0.7s normal linear forwards;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+main .menu-dishes h3 {
+  font-size: 1em;
+  font-weight: 400;
+  padding-bottom: 5px;
 }
 
 main .menu-item-text {
-  padding: 1em;
+  font-weight: 200;
+  font-size: .9em;
+  width: 100%;
 }
 
-main .menu-item-text h3 {
-  padding-bottom: 5px;
+main .price {
+  width: 30%;
+  padding: 11% 0 0 0;
 }
 
 main .menu-items {
@@ -119,8 +224,55 @@ main button {
           transform: translateX(60%);
 }
 
+main .slider {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #99E2D0;
+  -webkit-animation: slideright 0.8s normal linear forwards;
+          animation: slideright 0.8s normal linear forwards;
+}
+
+@-webkit-keyframes slideright {
+  from {
+    margin-right: 0;
+  }
+  to {
+    margin-right: -35%;
+  }
+}
+
+@keyframes slideright {
+  from {
+    margin-right: 0;
+  }
+  to {
+    margin-right: -35%;
+  }
+}
+
+main .checkmark {
+  color: white;
+  font-size: 220%;
+}
+
+main .description {
+  width: 100%;
+  height: 50px;
+  padding: 10px 0 15px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 footer {
-  background-color: #4d4d4d;
+  background-color: #333333;
   color: white;
   padding-left: 2em;
   margin-top: -3em;
