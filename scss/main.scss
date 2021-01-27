@@ -69,9 +69,9 @@ main {
 }
 
 h2 {
-    width: 3em;
     padding-bottom: 1em;
 }
+
 
 .location {
     background-color: $location_color;
@@ -80,6 +80,14 @@ h2 {
     span {
         font-weight: 400;
         margin-left: 1rem;
+    }
+}
+
+.info_header_wrapper{
+    h2 {
+        padding-top: 1.5em;
+        display: flex;
+        padding-left: 0.8em;
     }
 }
 
@@ -93,8 +101,9 @@ h2 {
     }
 
     p {
-        width: 98%;
+        width: 75%;
         font-weight: 300;
+        transform: translateX(15%);
     }
     
     button {
@@ -244,16 +253,14 @@ main {
     padding: 0em 0em 0em 1em;
 }
 
-    header {
+    .info_header_wrapper {
+        height: 19em;
         h2 {
             padding-bottom: 0;
             width: unset;
+            display: block;
         }
     }
-
-.info_header_wrapper {
-    height: 19em;
-}
 
 .location {
     float: none;
@@ -275,9 +282,8 @@ main {
     }
 
     p {
-        margin-left: 3em;
-        padding-left: -9em;
-        width: 10em;
+        margin-left: -1em;
+        width: 14em;
     }
 }
 
@@ -297,6 +303,12 @@ main {
     h2 {
         margin: 2em 0 1em 3em;
     }
+}
+
+#restaurtant-section {
+    padding-top: 2em;
+    display: flex;
+    padding-left: 1em;
 }
 
 .restaurtant_wrapper {
@@ -367,6 +379,15 @@ footer {
         padding-top: 1em;
     }
 
+    .info_header_wrapper {
+        padding: 2em 0em 1em 0em;
+        height: unset;
+
+        h2 {
+            padding-right: 1em;
+        }
+    }
+    
     .menu__booking {
 
         display: inline-flex;
@@ -379,7 +400,7 @@ footer {
         p {
             padding-top: 1em;
             margin-left: 0em;
-            width: 100%;
+            width: 78%;
     }
 
         button {
@@ -414,10 +435,6 @@ footer {
         justify-content: center;
         width: 100%;
         font-size: xx-large;
-    }
-
-    .info_header_wrapper {
-        padding: 2em 0em 1em 0em;
-        height: unset;
+        padding-top: 0;
     }
 }

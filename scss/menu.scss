@@ -6,24 +6,9 @@ body {
 }
 
 header {
+
     text-align: center;
-    .logo {
-        padding-top: 1em;
-        transform: scale(.8);
-    }
-    .header_img {
-        display: flex;
-        width: 100%;
-    }
-    .header_img-plate{
-        display: flex;
-        width: 100%;
-        height: 15.6em;
-        object-fit: cover;
-    }
-    .arrow {
-        transform: translate(-50px, -15px);
-    }
+
     .loader {
         animation:spin 1s  linear forwards;
         border:solid 2vmin transparent;
@@ -51,6 +36,7 @@ header {
           top:0;
           width:16vmin;
         }
+
         &:after {
           animation:spin 3s  linear;
           border:solid 2vmin transparent;
@@ -66,17 +52,41 @@ header {
           width:12vmin;
         }
       }
+
       @keyframes spin {
         100% {
           transform:rotate(360deg);
           opacity: 0;
         }
       }
+
+    .logo {
+        padding-top: 1em;
+        transform: scale(.8);
+    }
+
+    .header_img {
+        display: flex;
+        width: 100%;
+    }
+
+    .header_img-plate {
+        display: flex;
+        width: 100%;
+        height: 15.6em;
+        object-fit: cover;
+    }
+
+    .arrow {
+        transform: translate(-30px, -15px);
+        font-size: x-large;
+    }
 }
 
 main {
+
     background-color: $location_color;
-    padding: 30px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     transform: translateY(-50px);
@@ -96,14 +106,14 @@ main {
     .heart {
         font-size: 1.3em;
         float: right;
-        transform: translate(-70px, -70px);
+        transform: translate(-20px, -42px);
     }
 
     .heart_filled {
         font-size: 1.3em;
         opacity: 0%;
         float: right;
-        transform: translate(-49px, -70px);
+        transform: translate(0, -42px);
         background:-moz-linear-gradient(top, #e72c83 0%, #a742c6 100%); 
         background: linear-gradient(to top, $primary_color 0%,$secondary_color 100%);
         background-clip: text;
@@ -137,14 +147,17 @@ main {
                 margin-top: 0;
             }
         }
+
         &:hover{
+            
             cursor: pointer;
 
             .description {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden; 
-                .menu-item-text{
+
+                .menu-item-text {
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     overflow: hidden;
@@ -157,20 +170,21 @@ main {
                 align-items: center;
                 animation: slideleft 1s normal linear forwards;
 
-            @keyframes slideleft {
-                from {
-                    margin-right: -35%;
-                }
+                        @keyframes slideleft {
+                            from {
+                                margin-right: -35%;
+                            }
 
-                to {
-                    margin-right: 0%;
-                }
-            }
-        }
+                            to {
+                                margin-right: 0%;
+                            }
+                        }
+                    }
 
         .checkmark {
             animation: rotate 1.1s normal linear forwards;
-        }
+            }
+
             @keyframes rotate {
                 0% {
                     transform: rotate(360deg);
@@ -193,11 +207,11 @@ main {
         font-weight: 200;
         font-size: .9em;
         width: 100%;
-        }
+    }
 
     .price {
         width: 30%;
-        padding: 11% 0 0 0;
+        padding: 7% 0 0 0;
     }
     
 
@@ -210,7 +224,6 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        // changes ^
         background-color: $tertiary-color;
         animation: slideright 0.8s normal linear forwards;
 
@@ -244,6 +257,12 @@ h1 {
     display: block;
     padding-left: 5px;
     height: 4em;
+    border: 1px solid $location_color;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    transform: translateY(-23px);
+    padding-top: 1em;
+    background-color: $location_color;
 }
 
 button {
@@ -252,7 +271,7 @@ button {
     padding: 1em;
     border-radius: 25px;
     border: none;
-    margin: 0em 0 9em 0;
+    margin: -1em 0 8em 0;
     @include shadow_effect;
     width: 50%;
     transform: translateX(50%);
@@ -291,10 +310,21 @@ footer {
         line-height: 1.8;
     }
 }
+
     @media screen and (min-width: 768px) { 
 
         main {
             padding-top: 0;
+
+            .heart {
+                font-size: 2.3em;
+                transform: translate(13em, -44px);
+            }
+            
+            .heart_filled {
+                font-size: 2.3em;
+                transform: translate(12em, -44px);
+            }
         }
 
         h1 {
@@ -336,15 +366,8 @@ footer {
             padding: 0.8em;
         }
 
-        main {
-            .heart {
-                font-size: 2.3em;
-                transform: translate(5em, -44px);
-            }
-            .heart_filled {
-                font-size: 2.3em;
-                transform: translate(4em, -44px);
-            }
+        .container-wrapper > section:nth-child(3) {
+            margin-left: -10%;
         }
 
         footer {
@@ -358,6 +381,24 @@ footer {
             .footer__text {
                 display: flex;
                 justify-content: space-evenly;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .container-wrapper > section:nth-child(3) {
+            margin-left: -8%;
+        }
+
+        main {
+            .heart {
+                font-size: 2.3em;
+                transform: translate(17em, -44px);
+            }
+            
+            .heart_filled {
+                font-size: 2.3em;
+                transform: translate(16em, -44px);
             }
         }
     }

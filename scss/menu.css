@@ -15,34 +15,6 @@ header {
   text-align: center;
 }
 
-header .logo {
-  padding-top: 1em;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-header .header_img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-header .header_img-plate {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 15.6em;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-header .arrow {
-  -webkit-transform: translate(-50px, -15px);
-          transform: translate(-50px, -15px);
-}
-
 header .loader {
   -webkit-animation: spin 1s  linear forwards;
           animation: spin 1s  linear forwards;
@@ -110,9 +82,38 @@ header .loader:after {
   }
 }
 
+header .logo {
+  padding-top: 1em;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+header .header_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+header .header_img-plate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 15.6em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header .arrow {
+  -webkit-transform: translate(-30px, -15px);
+          transform: translate(-30px, -15px);
+  font-size: x-large;
+}
+
 main {
   background-color: #eaeaea;
-  padding: 30px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   -webkit-transform: translateY(-50px);
@@ -134,16 +135,16 @@ main hr {
 main .heart {
   font-size: 1.3em;
   float: right;
-  -webkit-transform: translate(-70px, -70px);
-          transform: translate(-70px, -70px);
+  -webkit-transform: translate(-20px, -42px);
+          transform: translate(-20px, -42px);
 }
 
 main .heart_filled {
   font-size: 1.3em;
   opacity: 0%;
   float: right;
-  -webkit-transform: translate(-49px, -70px);
-          transform: translate(-49px, -70px);
+  -webkit-transform: translate(0, -42px);
+          transform: translate(0, -42px);
   background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
   background: linear-gradient(to top, #9356DC 0%, #FF79DA 100%);
   background-clip: text;
@@ -278,7 +279,7 @@ main .menu-item-text {
 
 main .price {
   width: 30%;
-  padding: 11% 0 0 0;
+  padding: 7% 0 0 0;
 }
 
 main .menu-items {
@@ -339,6 +340,13 @@ h1 {
   display: block;
   padding-left: 5px;
   height: 4em;
+  border: 1px solid #eaeaea;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  -webkit-transform: translateY(-23px);
+          transform: translateY(-23px);
+  padding-top: 1em;
+  background-color: #eaeaea;
 }
 
 button {
@@ -348,7 +356,7 @@ button {
   padding: 1em;
   border-radius: 25px;
   border: none;
-  margin: 0em 0 9em 0;
+  margin: -1em 0 8em 0;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: 50%;
@@ -397,6 +405,16 @@ footer li {
   main {
     padding-top: 0;
   }
+  main .heart {
+    font-size: 2.3em;
+    -webkit-transform: translate(13em, -44px);
+            transform: translate(13em, -44px);
+  }
+  main .heart_filled {
+    font-size: 2.3em;
+    -webkit-transform: translate(12em, -44px);
+            transform: translate(12em, -44px);
+  }
   h1 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -439,15 +457,8 @@ footer li {
   .menu-items {
     padding: 0.8em;
   }
-  main .heart {
-    font-size: 2.3em;
-    -webkit-transform: translate(5em, -44px);
-            transform: translate(5em, -44px);
-  }
-  main .heart_filled {
-    font-size: 2.3em;
-    -webkit-transform: translate(4em, -44px);
-            transform: translate(4em, -44px);
+  .container-wrapper > section:nth-child(3) {
+    margin-left: -10%;
   }
   footer {
     height: 7em;
@@ -463,6 +474,22 @@ footer li {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-wrapper > section:nth-child(3) {
+    margin-left: -8%;
+  }
+  main .heart {
+    font-size: 2.3em;
+    -webkit-transform: translate(17em, -44px);
+            transform: translate(17em, -44px);
+  }
+  main .heart_filled {
+    font-size: 2.3em;
+    -webkit-transform: translate(16em, -44px);
+            transform: translate(16em, -44px);
   }
 }
 /*# sourceMappingURL=menu.css.map */
