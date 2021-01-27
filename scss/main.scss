@@ -4,6 +4,9 @@
 header {
     text-align: center;
     margin-bottom: 3em;
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 0;
+    }
 
     .loader {
 
@@ -60,16 +63,34 @@ header {
 
     .logo {
         padding: 1.5em 0 0.8em 0;
+        @media screen and (min-width: 1024px) {
+            padding: 1.5em 0 0em 10em;
+            transform: scale(1.5);
+        }
     }
 }
 
 main {
     padding: 2em 1.8em;
     background-color: $background_color;
+
+    @media screen and (min-width: 768px) {
+        padding: 0em 0em 0em 1em;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding: 0;
+    }
 }
 
 h2 {
     padding-bottom: 1em;
+    
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 
@@ -77,6 +98,21 @@ h2 {
     background-color: $location_color;
     padding: 1rem 0 1rem 0;
     box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+    @media screen and (min-width: 768px) {
+        float: none;
+        padding: 0em 4em 2em 2em;
+        background-color: $background_color;
+        box-shadow: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+        float: right;
+        padding: 2em 4em 2em 2em;
+        background-color: $background_color;
+        box-shadow: none;
+    }
+
     span {
         font-weight: 400;
         margin-left: 1rem;
@@ -84,10 +120,30 @@ h2 {
 }
 
 .info_header_wrapper{
+
+    @media screen and (min-width: 768px) {
+        height: 19em;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding: 2em 0em 1em 0em;
+        height: unset;
+    }
+
     h2 {
         padding-top: 1.5em;
         display: flex;
         padding-left: 0.8em;
+
+        @media screen and (min-width: 768px) {
+            padding-bottom: 0;
+            width: unset;
+            display: block;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-right: 1em;
+        }
     }
 }
 
@@ -95,15 +151,47 @@ h2 {
     background-color: $background_color;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 768px) {
+        justify-content: space-evenly;
+        display: inline-flex;
+        height: 22em;
+        float: left;
+        padding-left: 4em;
+        margin-top: 0.3em;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: inline-flex;
+        height: 11em;
+        width: 100%;
+        float: none;
+        font-size: x-large;
+        padding-left: 0;
+    }
 
     h1 {
         padding: 1.7em 0 1.7em 0;
+        @media screen and (min-width: 768px) {
+            padding: 0;
+        }
     }
 
     p {
         width: 75%;
         font-weight: 300;
         transform: translateX(15%);
+
+        @media screen and (min-width: 768px) {
+            margin-left: -1em;
+            width: 14em;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-top: 1em;
+            margin-left: 0em;
+            width: 78%;
+        }
+        
     }
     
     button {
@@ -119,16 +207,49 @@ h2 {
             @include button_color--light;
             @include dark_shadow_effect;
         }
+
+        @media screen and (min-width: 1024px) {
+            font-size: large;
+        }
     }
 }
 
 .filter {
+    @media screen and (min-width: 768px) {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 20em;
+        float: right;
+        padding-right: 2em;
+        width: 21em;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        float: none;
+        height: 11em;
+        transform: translateY(30px);
+        width: 100%;
+        padding-right: 0;
+    }
 
     h2 {
         margin: 2em 0 1em 1em;
         text-align: left;
         padding-bottom: 0.5em;
         width: 100%;
+
+        @media screen and (min-width: 768px) {
+            margin: 2em 0 1em 3em;
+        }
+
+        @media screen and (min-width: 1024px) {
+            margin: 0.5em 0 1em 1em;
+            width: 30%;
+        }
     }
 
     &__cards {
@@ -147,6 +268,14 @@ h2 {
                 .filter__icon {
                     color: $primary_color;
                 }
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 100%;
+            }
+
+            @media screen and (min-width: 1024px) {
+               font-size: larger;
             }
     }
 
@@ -172,6 +301,11 @@ h2 {
     border-radius: 15px;
     margin-bottom: 1.5em;
     @include shadow_effect;
+    @media screen and (min-width: 768px) {
+        width: 44%;
+        margin: 1em;
+        margin-left: 1.3em;
+    }
 
     .restaurtant__img {
         width: 100%;
@@ -206,12 +340,22 @@ h2 {
                 &:hover { 
                 opacity: 100%;
                 }
+
+                @media screen and (min-width: 1024px) {
+                    padding-top: 1em;
+                }
         }
+
         .heart{
             float: right;
             padding-right: 15px;
             font-size: x-large;
             transform: translateY(-20px);
+
+            @media screen and (min-width: 1024px) {
+                padding-top: 1em;
+            }
+
         }
     }
 }
@@ -221,10 +365,18 @@ footer {
     color: white;
     padding-left: 2em;
 
+    @media screen and (min-width: 768px) {
+        height: 7em;
+        padding-left: 0;
+    }
+
     .logo{
         filter: invert(1);
         padding: 1.5em 0 0.8em 0;
         height: 3.5em;
+        @media screen and (min-width: 768px) {
+            width: 100%;
+        }
     }
 
     .utenstils {
@@ -249,62 +401,6 @@ html {
     background-color: $background_color;
 }
 
-main {
-    padding: 0em 0em 0em 1em;
-}
-
-    .info_header_wrapper {
-        height: 19em;
-        h2 {
-            padding-bottom: 0;
-            width: unset;
-            display: block;
-        }
-    }
-
-.location {
-    float: none;
-    padding: 0em 4em 2em 2em;
-    background-color: $background_color;
-    box-shadow: none;
-}
-
-.menu__booking {
-    justify-content: space-evenly;
-    display: inline-flex;
-    height: 22em;
-    float: left;
-    padding-left: 4em;
-    margin-top: 0.3em;
-
-    h1{
-        padding: 0;
-    }
-
-    p {
-        margin-left: -1em;
-        width: 14em;
-    }
-}
-
-.filter {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 20em;
-    float: right;
-    padding-right: 2em;
-    width: 21em;
-
-    &__cards {
-        width: 100%;
-    }
-
-    h2 {
-        margin: 2em 0 1em 3em;
-    }
-}
-
 #restaurtant-section {
     padding-top: 2em;
     display: flex;
@@ -316,118 +412,16 @@ main {
     flex-wrap: wrap;
 }
 
-.restaurtant__cards {
-    width: 44%;
-    margin: 1em;
-    margin-left: 1.3em;
-}
-
-footer {
-    height: 7em;
-    padding-left: 0;
-
-    .logo {
-        width: 100%;
-    }
-
     .footer__text {
         display: flex;
         justify-content: space-evenly;
     }
 }
 
-}
-
 @media screen and (min-width: 1024px) {
-
-    main {
-        padding: 0;
-    }
-
-    header {
-        margin-bottom: 0;
-
-        .logo {
-            padding: 1.5em 0 0em 10em;
-            transform: scale(1.5);
-        }
-    
-    }
-
-    h2 {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .location {
-        float: right;
-        padding: 2em 4em 2em 2em;
-        background-color: $background_color;
-        box-shadow: none;
-    }
-
     .restaurtant_wrapper {
         flex-wrap: nowrap;
-    }
-
-    .heart {
-        padding-top: 1em;
-    }
-
-    .heart_filled {
-        padding-top: 1em;
-    }
-
-    .info_header_wrapper {
-        padding: 2em 0em 1em 0em;
-        height: unset;
-
-        h2 {
-            padding-right: 1em;
-        }
-    }
-    
-    .menu__booking {
-
-        display: inline-flex;
-        height: 11em;
-        width: 100%;
-        float: none;
-        font-size: x-large;
-        padding-left: 0;
-
-        p {
-            padding-top: 1em;
-            margin-left: 0em;
-            width: 78%;
-    }
-
-        button {
-            font-size: large;
-        }
-}
-
-    .filter {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        float: none;
-        height: 11em;
-        transform: translateY(30px);
-        width: 100%;
-        padding-right: 0;
-
-        &__cards {
-            font-size: larger;
-        }
-
-        h2 {
-            margin: 0.5em 0 1em 1em;
-            width: 30%;
-        }
-    }
+    } 
 
     #restaurtant-section {
         display: flex;
