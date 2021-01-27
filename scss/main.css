@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8,11 +9,88 @@
 
 header {
   text-align: center;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
+}
+
+header .loader {
+  -webkit-animation: spin 1s  linear forwards;
+          animation: spin 1s  linear forwards;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #09f;
+  border-top-color: #09f;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 20vmin;
+  left: calc(50% - 10vmin);
+  position: fixed;
+  top: calc(50% - 10vmin);
+  width: 20vmin;
+  z-index: 1;
+}
+
+header .loader:before {
+  -webkit-animation: spin 2s  linear;
+          animation: spin 2s  linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #3cf;
+  border-top-color: #3cf;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: “”;
+  height: 16vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16vmin;
+}
+
+header .loader:after {
+  -webkit-animation: spin 3s  linear;
+          animation: spin 3s  linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #6ff;
+  border-top-color: #6ff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: “”;
+  height: 12vmin;
+  left: 2vmin;
+  position: absolute;
+  top: 2vmin;
+  width: 12vmin;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
 }
 
 header .logo {
   padding: 1.5em 0 0.8em 0;
+}
+
+main {
+  padding: 2em 1.8em;
+  background-color: #f6f6f6;
+}
+
+h2 {
+  width: 3em;
+  padding-bottom: 1em;
 }
 
 .location {
@@ -29,6 +107,13 @@ header .logo {
 
 .menu__booking {
   background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .menu__booking h1 {
@@ -36,8 +121,7 @@ header .logo {
 }
 
 .menu__booking p {
-  width: 83%;
-  margin-left: 30px;
+  width: 98%;
   font-weight: 300;
 }
 
@@ -53,15 +137,26 @@ header .logo {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
+.menu__booking button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fface8), to(#ae80e5));
+  background-image: linear-gradient(#fface8, #ae80e5);
+  -webkit-box-shadow: 0 4px 8px 0 black;
+          box-shadow: 0 4px 8px 0 black;
+}
+
 .filter h2 {
   margin: 2em 0 1em 1em;
   text-align: left;
   padding-bottom: 0.5em;
+  width: 100%;
 }
 
 .filter__cards {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-radius: 25px;
   background-color: #f6f6f6;
   margin: 0 1em 1.5em 1em;
@@ -69,6 +164,7 @@ header .logo {
   height: 4.5em;
   padding-top: 1.7em;
   font-weight: 500;
+  width: 92%;
 }
 
 .filter__cards:hover {
@@ -85,22 +181,21 @@ header .logo {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  display: inline-block;
   margin: -10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .filter .filter__icon {
-  margin: 0 1em;
+  margin: 0 1em 0 2em;
   color: gray;
-}
-
-main {
-  padding: 4em 1.8em;
-  background-color: #f6f6f6;
-}
-
-h2 {
-  padding-bottom: 1em;
 }
 
 .restaurtant__cards {
@@ -114,12 +209,9 @@ h2 {
   width: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-}
-
-.restaurtant__cards .restaurtant__img .restaurtant__img__plate {
-  width: 50%;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  height: 13.2em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .restaurtant__cards .restaurtant__cards__text {
@@ -128,10 +220,12 @@ h2 {
 
 .restaurtant__cards .restaurtant__cards__text h3 {
   padding-bottom: 5px;
+  width: 101%;
 }
 
 .restaurtant__cards .restaurtant__cards__text .heart_filled {
   opacity: 0%;
+  margin-bottom: -35%;
   float: right;
   padding-right: 15px;
   font-size: x-large;
@@ -185,5 +279,195 @@ footer ul {
 
 footer li {
   line-height: 1.8;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    background-color: #f6f6f6;
+  }
+  main {
+    padding: 0em 0em 0em 1em;
+  }
+  header h2 {
+    padding-bottom: 0;
+    width: unset;
+  }
+  .info_header_wrapper {
+    height: 19em;
+  }
+  .location {
+    float: none;
+    padding: 0em 4em 2em 2em;
+    background-color: #f6f6f6;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .menu__booking {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 22em;
+    float: left;
+    padding-left: 4em;
+    margin-top: 0.3em;
+  }
+  .menu__booking h1 {
+    padding: 0;
+  }
+  .menu__booking p {
+    margin-left: 3em;
+    padding-left: -9em;
+    width: 10em;
+  }
+  .filter {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 20em;
+    float: right;
+    padding-right: 2em;
+    width: 21em;
+  }
+  .filter__cards {
+    width: 100%;
+  }
+  .filter h2 {
+    margin: 2em 0 1em 3em;
+  }
+  .restaurtant_wrapper {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .restaurtant__cards {
+    width: 44%;
+    margin: 1em;
+    margin-left: 1.3em;
+  }
+  footer {
+    height: 7em;
+    padding-left: 0;
+  }
+  footer .logo {
+    width: 100%;
+  }
+  footer .footer__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 0;
+  }
+  header {
+    margin-bottom: 0;
+  }
+  header .logo {
+    padding: 1.5em 0 0em 10em;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  h2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .location {
+    float: right;
+    padding: 2em 4em 2em 2em;
+    background-color: #f6f6f6;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .restaurtant_wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .heart {
+    padding-top: 1em;
+  }
+  .heart_filled {
+    padding-top: 1em;
+  }
+  .menu__booking {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 11em;
+    width: 100%;
+    float: none;
+    font-size: x-large;
+    padding-left: 0;
+  }
+  .menu__booking p {
+    padding-top: 1em;
+    margin-left: 0em;
+    width: 100%;
+  }
+  .menu__booking button {
+    font-size: large;
+  }
+  .filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    float: none;
+    height: 11em;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    width: 100%;
+    padding-right: 0;
+  }
+  .filter__cards {
+    font-size: larger;
+  }
+  .filter h2 {
+    margin: 0.5em 0 1em 1em;
+    width: 30%;
+  }
+  #restaurtant-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 1em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    font-size: xx-large;
+  }
+  .info_header_wrapper {
+    padding: 2em 0em 1em 0em;
+    height: unset;
+  }
 }
 /*# sourceMappingURL=main.css.map */
