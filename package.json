@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./scss/styles.scss:./prefix/styles.css",
-    "prefix": "postcss -w ./prefix/styles.css --use autoprefixer -d ./css/"
+    "main": "sass --watch ./scss/main.scss:./prefix/styles.css --style compressed",
+    "menu": "sass --watch ./scss/menu.scss:./prefix/styles.css --style compressed",
+    "prefix": "postcss -w ./prefix/styles.css --use autoprefixer -d ./css/ --style compressed"
   },
   "author": "Isaiah",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": "last 4 versions"
 }
