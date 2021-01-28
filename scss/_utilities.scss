@@ -25,3 +25,15 @@ $background_color: rgb(246, 246, 246);
 @mixin footer_background_color {
     background-color:lighten($color: black, $amount: 30%);
 }
+
+@mixin mobile-only {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
