@@ -6,20 +6,17 @@
   font-family: 'Roboto';
 }
 
+html {
+  position: relative;
+}
+
 body {
+  position: relative;
   background-color: #eaeaea;
 }
 
-html {
-  position: relative;
-  z-index: 10;
-}
-
-body {
-  position: relative;
-}
-
 body .load {
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -28,7 +25,7 @@ body .load {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  position: absolute;
+  position: fixed;
   -webkit-animation: fade 3s forwards;
           animation: fade 3s forwards;
   background-color: black;
@@ -102,30 +99,28 @@ body .load__circles--4 {
 @-webkit-keyframes fade {
   0% {
     opacity: 1;
-    z-index: 20;
+    z-index: 1;
   }
   90% {
     opacity: .9;
-    z-index: 20;
+    z-index: 1;
   }
   100% {
     opacity: 0;
-    z-index: 10;
   }
 }
 
 @keyframes fade {
   0% {
     opacity: 1;
-    z-index: 20;
+    z-index: 1;
   }
   90% {
     opacity: .9;
-    z-index: 20;
+    z-index: 1;
   }
   100% {
     opacity: 0;
-    z-index: 10;
   }
 }
 

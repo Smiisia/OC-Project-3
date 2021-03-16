@@ -3,19 +3,19 @@
 
 html {
     position: relative;
-    z-index: 10;
 }
 
 body {
     position: relative;
 
     .load {
+        z-index: 0;
         width: 100vw;
         height: 100vh;
         display: flex;
         justify-content: space-evenly;
-        position: absolute;
-        animation: fade 2s forwards;
+        position: fixed;
+        animation: fade 3s forwards;
         background-color: black;
           &__circles {
             background-color: $background_color;
@@ -23,7 +23,7 @@ body {
             width: 20vw;
             margin: 1%;
             border-radius: 50%;
-            animation: circles $anim-dur backwards 3 alternate;
+            animation: circles $anim-dur backwards 4 alternate;
             margin: auto;
               @for $i from 1 through 4 {
                   &--#{$i} {
@@ -55,17 +55,17 @@ body {
       @keyframes fade {
           0% {
               opacity: 1;
-              z-index: 20;
+              z-index: 2;
           }
 
           90%{
             opacity: .9;
-            z-index: 20;
+            z-index: 2;
           }
 
           100% {
               opacity: 0;
-              z-index: 10;
+              z-index: 2;
           }
       }
 }
@@ -74,7 +74,7 @@ header {
     text-align: center;
     margin-bottom: 3em;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     @include desktop-only {
         margin-bottom: 0;
     }
@@ -94,7 +94,7 @@ main {
     padding: 2em 1.8em;
     background-color: $background_color;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     @include tablet-only {
         padding: 0em 0em 0em 1em;
     }
@@ -240,7 +240,7 @@ h2 {
         display: inline-flex;
         flex-direction: column;
         justify-content: space-evenly;
-        height: 20em;
+        height: 19em;
         float: right;
         padding-right: 2em;
         width: 21em;
@@ -386,7 +386,7 @@ footer {
     color: white;
     padding-left: 2em;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     @include tablet-only {
         height: 7em;
         padding-left: 0;

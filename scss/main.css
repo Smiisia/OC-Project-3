@@ -8,7 +8,6 @@
 
 html {
   position: relative;
-  z-index: 10;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
 }
 
 body .load {
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -24,7 +24,7 @@ body .load {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  position: absolute;
+  position: fixed;
   -webkit-animation: fade 3s forwards;
           animation: fade 3s forwards;
   background-color: black;
@@ -98,30 +98,30 @@ body .load__circles--4 {
 @-webkit-keyframes fade {
   0% {
     opacity: 1;
-    z-index: 20;
+    z-index: 2;
   }
   90% {
     opacity: .9;
-    z-index: 20;
+    z-index: 2;
   }
   100% {
     opacity: 0;
-    z-index: 10;
+    z-index: 2;
   }
 }
 
 @keyframes fade {
   0% {
     opacity: 1;
-    z-index: 20;
+    z-index: 2;
   }
   90% {
     opacity: .9;
-    z-index: 20;
+    z-index: 2;
   }
   100% {
     opacity: 0;
-    z-index: 10;
+    z-index: 2;
   }
 }
 
@@ -129,7 +129,7 @@ header {
   text-align: center;
   margin-bottom: 3em;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 @media screen and (min-width: 1024px) {
@@ -154,7 +154,7 @@ main {
   padding: 2em 1.8em;
   background-color: #f6f6f6;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -360,7 +360,7 @@ h2 {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    height: 20em;
+    height: 19em;
     float: right;
     padding-right: 2em;
     width: 21em;
@@ -546,7 +546,7 @@ footer {
   color: white;
   padding-left: 2em;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {

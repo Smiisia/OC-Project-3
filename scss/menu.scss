@@ -1,25 +1,22 @@
 @import "utilities";
 @import "config";
 
-body {
-    background-color: $location_color;
-}
-
 html {
     position: relative;
-    z-index: 10;
 }
 
 body {
     position: relative;
+    background-color: $location_color;
 
     .load {
+        z-index: 0;
         width: 100vw;
         height: 100vh;
         display: flex;
         justify-content: space-evenly;
-        position: absolute;
-        animation: fade 2s forwards;
+        position: fixed;
+        animation: fade 3s forwards;
         background-color: black;
           &__circles {
             background-color: $background_color;
@@ -27,7 +24,7 @@ body {
             width: 20vw;
             margin: 1%;
             border-radius: 50%;
-            animation: circles $anim-dur backwards 3 alternate;
+            animation: circles $anim-dur backwards 4 alternate;
             margin: auto;
               @for $i from 1 through 4 {
                   &--#{$i} {
@@ -58,18 +55,17 @@ body {
 
       @keyframes fade {
           0% {
-              opacity: 1;
-              z-index: 20;
+            opacity: 1;
+            z-index: 1;
           }
 
           90%{
             opacity: .9;
-            z-index: 20;
+            z-index: 1;
           }
 
           100% {
-              opacity: 0;
-              z-index: 10;
+            opacity: 0;
           }
       }
 }
