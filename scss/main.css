@@ -106,7 +106,7 @@ body .load__circles--4 {
   }
   100% {
     opacity: 0;
-    z-index: 2;
+    z-index: 1;
   }
 }
 
@@ -121,7 +121,7 @@ body .load__circles--4 {
   }
   100% {
     opacity: 0;
-    z-index: 2;
+    z-index: 1;
   }
 }
 
