@@ -15,7 +15,7 @@ body {
         display: flex;
         justify-content: space-evenly;
         position: absolute;
-        animation: fade 3s forwards;
+        animation: fade 2s forwards;
         background-color: black;
           &__circles {
             background-color: $background_color;
@@ -23,7 +23,7 @@ body {
             width: 20vw;
             margin: 1%;
             border-radius: 50%;
-            animation: circles $anim-dur backwards 4 alternate;
+            animation: circles $anim-dur backwards 3 alternate;
             margin: auto;
               @for $i from 1 through 4 {
                   &--#{$i} {
