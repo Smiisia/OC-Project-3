@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,59 +10,127 @@ body {
   background-color: #eaeaea;
 }
 
+html {
+  position: relative;
+  z-index: 10;
+}
+
+body {
+  position: relative;
+}
+
+body .load {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  -webkit-animation: fade 3s forwards;
+          animation: fade 3s forwards;
+  background-color: black;
+}
+
+body .load__circles {
+  background-color: #f6f6f6;
+  height: 6vh;
+  width: 20vw;
+  margin: 1%;
+  border-radius: 50%;
+  -webkit-animation: circles 1000ms backwards 4 alternate;
+          animation: circles 1000ms backwards 4 alternate;
+  margin: auto;
+}
+
+body .load__circles--1 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+body .load__circles--2 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+body .load__circles--3 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+body .load__circles--4 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+@media screen and (min-width: 768px) {
+  body .load__circles {
+    height: 15vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .load__circles {
+    height: 20vh;
+  }
+}
+
+@-webkit-keyframes circles {
+  0% {
+    background-color: #9356DC;
+    opacity: 0;
+  }
+  100% {
+    background-color: #9356DC;
+    opacity: 1;
+  }
+}
+
+@keyframes circles {
+  0% {
+    background-color: #9356DC;
+    opacity: 0;
+  }
+  100% {
+    background-color: #9356DC;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 20;
+  }
+  90% {
+    opacity: .9;
+    z-index: 20;
+  }
+  100% {
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 20;
+  }
+  90% {
+    opacity: .9;
+    z-index: 20;
+  }
+  100% {
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
 header {
   text-align: center;
-}
-
-header .loader {
-  -webkit-animation: spin 1s  linear forwards;
-          animation: spin 1s  linear forwards;
-  border: solid 2vmin transparent;
-  border-radius: 50%;
-  border-right-color: #09f;
-  border-top-color: #09f;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 20vmin;
-  left: calc(50% - 10vmin);
-  position: fixed;
-  top: calc(50% - 10vmin);
-  width: 20vmin;
-  z-index: 1;
-}
-
-header .loader:before {
-  -webkit-animation: spin 2s  linear;
-          animation: spin 2s  linear;
-  border: solid 2vmin transparent;
-  border-radius: 50%;
-  border-right-color: #3cf;
-  border-top-color: #3cf;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  content: “”;
-  height: 16vmin;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 16vmin;
-}
-
-header .loader:after {
-  -webkit-animation: spin 3s  linear;
-          animation: spin 3s  linear;
-  border: solid 2vmin transparent;
-  border-radius: 50%;
-  border-right-color: #6ff;
-  border-top-color: #6ff;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  content: “”;
-  height: 12vmin;
-  left: 2vmin;
-  position: absolute;
-  top: 2vmin;
-  width: 12vmin;
 }
 
 @-webkit-keyframes spin {
@@ -392,6 +459,22 @@ main .heart_filled:hover {
 .checkmark {
   color: white;
   font-size: 220%;
+  -webkit-animation: spinback 1.1s normal linear forwards;
+          animation: spinback 1.1s normal linear forwards;
+}
+
+@-webkit-keyframes spinback {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes spinback {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
 }
 
 .description {

@@ -1,65 +1,85 @@
 @import "utilities";
 @import "config";
 
+html {
+    position: relative;
+    z-index: 10;
+}
+
+body {
+    position: relative;
+
+    .load {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        animation: fade 3s forwards;
+        background-color: black;
+          &__circles {
+            background-color: $background_color;
+            height: 6vh;
+            width: 20vw;
+            margin: 1%;
+            border-radius: 50%;
+            animation: circles $anim-dur backwards 4 alternate;
+            margin: auto;
+              @for $i from 1 through 4 {
+                  &--#{$i} {
+                      animation-delay: $anim-delay * $i;
+                  }
+              }
+
+              @include tablet-only {
+                  height: 15vh;
+              }
+              
+              @include desktop-only {
+                  height: 20vh;
+              }
+          }
+
+          @keyframes circles {
+            0% { 
+                background-color: $primary_color;
+                opacity: 0;
+            }  
+            100% { 
+                background-color: $primary_color;
+                opacity: 1;
+            }
+        }
+      } 
+
+      @keyframes fade {
+          0% {
+              opacity: 1;
+              z-index: 20;
+          }
+
+          90%{
+            opacity: .9;
+            z-index: 20;
+          }
+
+          100% {
+              opacity: 0;
+              z-index: 10;
+          }
+      }
+}
+
 header {
     text-align: center;
     margin-bottom: 3em;
+    position: relative;
+    z-index: 10;
     @include desktop-only {
         margin-bottom: 0;
     }
 
-    .loader {
-
-        animation:spin 1s  linear forwards;
-        border:solid 2vmin transparent;
-        border-radius:50%;
-        border-right-color:#09f;
-        border-top-color:#09f;
-        box-sizing:border-box;
-        height:20vmin;
-        left:calc(50% - 10vmin);
-        position:fixed;
-        top:calc(50% - 10vmin);
-        width:20vmin;
-        z-index:1;
-
-        &:before {
-          animation:spin 2s  linear;
-          border:solid 2vmin transparent;
-          border-radius:50%;
-          border-right-color:#3cf;
-          border-top-color:#3cf;
-          box-sizing:border-box;
-          content:“”;
-          height:16vmin;
-          left:0;
-          position:absolute;
-          top:0;
-          width:16vmin;
-        }
-
-        &:after {
-          animation:spin 3s  linear;
-          border:solid 2vmin transparent;
-          border-radius:50%;
-          border-right-color:#6ff;
-          border-top-color:#6ff;
-          box-sizing:border-box;
-          content:“”;
-          height:12vmin;
-          left:2vmin;
-          position:absolute;
-          top:2vmin;
-          width:12vmin;
-        }
-      }
-
-      @keyframes spin {
-        100% {
-          transform:rotate(360deg);
-          opacity: 0;
-        }
-      }
+    
 
     .logo {
         padding: 1.5em 0 0.8em 0;
@@ -73,8 +93,9 @@ header {
 main {
     padding: 2em 1.8em;
     background-color: $background_color;
-
-    @include mobile-only {
+    position: relative;
+    z-index: 10;
+    @include tablet-only {
         padding: 0em 0em 0em 1em;
     }
 
@@ -99,7 +120,7 @@ h2 {
     padding: 1rem 0 1rem 0;
     box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     
-    @include mobile-only {
+    @include tablet-only {
         float: none;
         padding: 0em 4em 2em 2em;
         background-color: $background_color;
@@ -121,7 +142,7 @@ h2 {
 
 .info_header_wrapper{
 
-    @include mobile-only {
+    @include tablet-only {
         height: 19em;
     }
 
@@ -135,7 +156,7 @@ h2 {
         display: flex;
         padding-left: 0.8em;
 
-        @include mobile-only {
+        @include tablet-only {
             padding-bottom: 0;
             width: unset;
             display: block;
@@ -151,7 +172,7 @@ h2 {
     background-color: $background_color;
     display: flex;
     flex-direction: column;
-    @include mobile-only {
+    @include tablet-only {
         justify-content: space-evenly;
         display: inline-flex;
         height: 22em;
@@ -171,7 +192,7 @@ h2 {
 
     h1 {
         padding: 1.7em 0 1.7em 0;
-        @include mobile-only {
+        @include tablet-only {
             padding: 0;
         }
     }
@@ -181,7 +202,7 @@ h2 {
         font-weight: 300;
         transform: translateX(15%);
 
-        @include mobile-only {
+        @include tablet-only {
             margin-left: -1em;
             width: 14em;
         }
@@ -215,7 +236,7 @@ h2 {
 }
 
 .filter {
-    @include mobile-only {
+    @include tablet-only {
         display: inline-flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -242,7 +263,7 @@ h2 {
         padding-bottom: 0.5em;
         width: 100%;
 
-        @include mobile-only {
+        @include tablet-only {
             margin: 2em 0 1em 3em;
         }
 
@@ -270,7 +291,7 @@ h2 {
                 }
             }
 
-            @include mobile-only {
+            @include tablet-only {
                 width: 100%;
             }
 
@@ -301,7 +322,7 @@ h2 {
     border-radius: 15px;
     margin-bottom: 1.5em;
     @include shadow_effect;
-    @include mobile-only {
+    @include tablet-only {
         width: 44%;
         margin: 1em;
         margin-left: 1.3em;
@@ -364,8 +385,9 @@ footer {
     @include footer_background_color;
     color: white;
     padding-left: 2em;
-
-    @include mobile-only {
+    position: relative;
+    z-index: 10;
+    @include tablet-only {
         height: 7em;
         padding-left: 0;
     }
@@ -374,7 +396,7 @@ footer {
         filter: invert(1);
         padding: 1.5em 0 0.8em 0;
         height: 3.5em;
-        @include mobile-only {
+        @include tablet-only {
             width: 100%;
         }
     }
@@ -393,6 +415,11 @@ footer {
 
     li {
         line-height: 1.8;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
     }
 }
 

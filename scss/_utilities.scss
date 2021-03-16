@@ -5,6 +5,9 @@ $secondary_color--light: lighten($secondary_color, 10%);
 $tertiary_color: #99E2D0;
 $location_color: rgb(234, 234, 234);
 $background_color: rgb(246, 246, 246);
+$size: 3vh;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 5;
 
 @mixin shadow_effect{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
@@ -26,7 +29,7 @@ $background_color: rgb(246, 246, 246);
     background-color:lighten($color: black, $amount: 30%);
 }
 
-@mixin mobile-only {
+@mixin tablet-only {
     @media screen and (min-width: 768px) {
         @content;
     }
