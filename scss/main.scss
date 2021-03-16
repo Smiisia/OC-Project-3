@@ -423,7 +423,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) {
+@include tablet-only {
 html {
     background-color: $background_color;
 }
@@ -445,7 +445,7 @@ html {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@include desktop-only {
     .restaurtant_wrapper {
         flex-wrap: nowrap;
     } 

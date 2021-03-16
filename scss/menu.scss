@@ -74,13 +74,6 @@ header {
 
     text-align: center;
 
-      @keyframes spin {
-        100% {
-          transform:rotate(360deg);
-          opacity: 0;
-        }
-      }
-
     .logo {
         padding-top: 1em;
         transform: scale(.8);
@@ -89,7 +82,7 @@ header {
     .header_img {
         display: flex;
         width: 100%;
-        @media screen and (min-width: 768px) {
+        @include tablet-only {
             width: 50%;
             transform: translateX(50%);
         }
@@ -100,7 +93,7 @@ header {
         width: 100%;
         height: 15.6em;
         object-fit: cover;
-        @media screen and (min-width: 768px) {
+        @include tablet-only {
             width: 50%;
             height: 20em;
             transform: translateX(50%);
@@ -110,7 +103,7 @@ header {
     .arrow {
         transform: translate(-30px, -15px);
         font-size: x-large;
-        @media screen and (min-width: 768px) {
+        @include tablet-only {
             transform: translate(10px, 10px);
             float: left;
             font-size: xx-large;
@@ -127,7 +120,7 @@ main {
     border-top-left-radius: 30px;
     transform: translateY(-50px);
 
-    @media screen and (min-width: 768px) { 
+    @include tablet-only { 
             padding-top: 0;
         }
 
@@ -148,13 +141,13 @@ main {
         float: right;
         transform: translate(-20px, -42px);
 
-        @media screen and (min-width: 768px) { 
+        @include tablet-only { 
                 font-size: 2.3em;
                 transform: translate(13em, -44px);
         }
 
-        @media screen and (min-width: 1024px) {
-            transform: translate(17em, -44px);
+        @include desktop-only {
+                transform: translate(17em, -44px);
         }
     }
 
@@ -174,12 +167,12 @@ main {
                 opacity: 100%;
             }
 
-            @media screen and (min-width: 768px) { 
+            @include tablet-only { 
                     font-size: 2.3em;
                     transform: translate(12em, -44px);
             }
 
-            @media screen and (min-width: 1024px) {
+            @include desktop-only {
                 transform: translate(16em, -44px);
             }
         }
@@ -227,7 +220,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                animation: slideleft 1s normal linear forwards;
+                animation: slideleft .5s normal linear forwards;
 
                         @keyframes slideleft {
                             from {
@@ -241,7 +234,7 @@ main {
                     }
 
             .checkmark {
-                animation: rotate 1.1s normal linear forwards;
+                animation: rotate .7s normal linear forwards;
                 }
 
                 @keyframes rotate {
@@ -276,7 +269,7 @@ main {
 
     .menu-items {
         transform: translateY(20px);
-        @media screen and (min-width: 768px) {
+        @include tablet-only {
             padding: 0.8em;
         }
     }
@@ -332,7 +325,7 @@ h1 {
     padding-top: 1em;
     background-color: $location_color;
 
-    @media screen and (min-width: 768px) {
+    @include tablet-only {
         display: flex;
         justify-content: center;
     }
@@ -354,7 +347,7 @@ button {
         @include dark_shadow_effect;
     }
 
-    @media screen and (min-width: 768px) {
+    @include tablet-only {
         margin: -1em 0 6em 0;
     }
     
@@ -365,7 +358,7 @@ footer {
     color: white;
     padding-left: 2em;
     margin-top: -3em;
-        @media screen and (min-width: 768px) {
+        @include tablet-only {
             height: 7em;
             padding-left: 0;
         }
@@ -374,7 +367,7 @@ footer {
         filter: invert(1);
         padding: 1.5em 0 0.8em 0;
         height: 3.5em;
-            @media screen and (min-width: 768px) {
+            @include tablet-only {
                 width: 100%;
             }
     }
@@ -394,9 +387,14 @@ footer {
     li {
         line-height: 1.8;
     }
+    
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
-    @media screen and (min-width: 768px) { 
+    @include tablet-only { 
         .container-wrapper{
             display: flex;
             flex-wrap: wrap;
@@ -414,7 +412,7 @@ footer {
             }
      }
 
-    @media screen and (min-width: 1024px) {
+    @include desktop-only {
         .container-wrapper > section:nth-child(3) {
             margin-left: -8%;
         }
